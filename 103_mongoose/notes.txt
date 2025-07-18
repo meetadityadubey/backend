@@ -1,0 +1,1 @@
+as a backend engineer we need to first design the sechema or what data to store like username, password, etc..
