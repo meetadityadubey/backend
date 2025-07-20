@@ -53,6 +53,7 @@ const userSchema = new Schema(
 );
 
 //note this code below will execute every time the user make any change to any field. so we need to check for the password field only. that's why isModified("password") is used
+
 userSchema.pre("save", async function (next) {
   //next is necessary
   if (!this.isModified("password")) return;
@@ -79,6 +80,7 @@ userSchema.methods.generateAccessToken = function () {
     }
   );
 };
+
 userSchema.methods.generateRefreshToken = function () {
   return jwt.sign(
     {
